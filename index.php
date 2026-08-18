@@ -35,6 +35,14 @@ if ($password != "") {
     <form action="">
         <input type="number" min="5" max="20" name="length" id="length">
         <label for="length">Lunghezza della password</label>
+        <div>
+            <input type="checkbox" name="lettere" id="lettere">
+            <label for="lettere">Lettere</label>
+            <input type="checkbox" name="numeri" id="numeri">
+            <label for="numeri">Numeri</label>
+            <input type="checkbox" name="simboli" id="simboli">
+            <label for="simboli">Simboli</label>
+        </div>
         <button>Genera</button>
     </form>
 

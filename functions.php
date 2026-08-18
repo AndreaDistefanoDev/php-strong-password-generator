@@ -9,7 +9,7 @@ if (isset($_GET['length'])) {
 
 
     // Stringa con tutte le lettere minuscole
-    $minuscole = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $lettere = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 
     // Stringa con tutti i numeri
@@ -18,12 +18,23 @@ if (isset($_GET['length'])) {
     // Stringa con tutti i simboli
     $simboli = '!@#$%^&*()_+-=[]{}|;:,.<>/?';
 
-    // variabile che contine tutti i caratteri insieme
-
-    $caratteri = $minuscole . $numeri . $simboli;
+    $caratteri = "";
 
 
-    // aggiungere il carattere casuale alla password
+    // controllo se sia stato selezionato il parametro lettere
+    if (isset($_GET['lettere']) && $_GET['lettere'] == "on") {
+        $caratteri .= $lettere;
+    }
+
+    // controllo se sia stato selezionato il parametro numeri
+    if (isset($_GET['numeri']) && $_GET['numeri'] == "on") {
+        $caratteri .= $numeri;
+    }
+    // controllo se sia stato selezionato il parametro simboli
+    if (isset($_GET['simboli']) && $_GET['simboli'] == "on") {
+        $caratteri .= $simboli;
+    }
+
 
 
     for ($i = 0; $i < $_GET['length']; $i++) {
