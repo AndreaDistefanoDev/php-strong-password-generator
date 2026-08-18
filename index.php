@@ -1,42 +1,8 @@
 <?php
 
-if (isset($_GET['length'])) {
-
-    // se è stato passato il parametro della lunghezza 
-    // si genera una password di quella lunghezza
+require_once './functions.php';
 
 
-    // Stringa con tutte le lettere minuscole
-    $minuscole = 'abcdefghijklmnopqrstuvwxyz';
-
-    // Stringa con tutte le lettere maiuscole
-    $maiuscole = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
-    // Stringa con tutti i numeri
-    $numeri = '0123456789';
-
-    // Stringa con tutti i simboli
-    $simboli = '!@#$%^&*()_+-=[]{}|;:,.<>/?';
-
-    // variabile che contine tutti i caratteri insieme
-
-    $caratteri = $minuscole . $maiuscole . $numeri . $simboli;
-
-    // prendo un carattere casuale 
-
-    $posizioneRandom = rand(0, strlen($caratteri) - 1);
-    $carattereRandom = substr($caratteri, $PosizioneRandom, 1);
-
-    // aggiungere il carattere casuale alla password
-
-    $password="";
-    for ($i = 0; $i < $_GET['length']; $i++) {
-
-        $password .= $carattereRandom;
-
-}
-
-echo $password;
 
 ?>
 
@@ -61,6 +27,17 @@ echo $password;
         <label for="length">Lunghezza della password</label>
         <button>Genera</button>
     </form>
+
+    <hr>
+
+    <?php
+    if ($password != "") {
+    ?>
+        <h2> La tua password di <?php echo $_GET['length']; ?> caratteri è: </h2>
+        <pre><?php echo $password; ?></pre>
+    <?php
+    }
+    ?>
 </body>
 
 </html>
