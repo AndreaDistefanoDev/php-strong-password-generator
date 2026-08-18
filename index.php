@@ -2,7 +2,17 @@
 
 require_once './functions.php';
 
+if ($password != "") {
 
+    // startiamo la sessione
+    session_start();
+
+    // salviamo la password in una variabile di sessione
+    $_SESSION['password'] = $password;
+
+    // dirottiamo l'utente alla pagina password.php
+    header("Location: ./password.php");
+}
 
 ?>
 

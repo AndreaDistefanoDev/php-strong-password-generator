@@ -9,10 +9,8 @@ if (isset($_GET['length'])) {
 
 
     // Stringa con tutte le lettere minuscole
-    $minuscole = 'abcdefghijklmnopqrstuvwxyz';
+    $minuscole = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-    // Stringa con tutte le lettere maiuscole
-    $maiuscole = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
     // Stringa con tutti i numeri
     $numeri = '0123456789';
@@ -22,7 +20,7 @@ if (isset($_GET['length'])) {
 
     // variabile che contine tutti i caratteri insieme
 
-    $caratteri = $minuscole . $maiuscole . $numeri . $simboli;
+    $caratteri = $minuscole . $numeri . $simboli;
 
 
     // aggiungere il carattere casuale alla password
